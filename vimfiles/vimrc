@@ -1,0 +1,134 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                           _                                       "
+"                    _   __(_)___ ___  __________                   "
+"                   | | / / / __ `__ \/ ___/ ___/                   "
+"                   | |/ / / / / / / / /  / /__                     "
+"                   |___/_/_/ /_/ /_/_/   \___/                     "
+"                                                                   "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                                                   "
+"        Written by minekaede (https://github.com/minekaede)        "
+"                                                                   "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"--------------------------------------------------------------------
+" 基本設定
+"--------------------------------------------------------------------
+
+" 行番号を表示
+set number
+
+" カーソル行の可視化
+set cursorline
+
+" 検索時に全て英小文字で入力した場合のみ区別を無視
+set ignorecase
+set smartcase
+
+" 画面上でタブ文字が占める幅
+set tabstop=4
+
+" 自動インデントでずれる幅
+set shiftwidth=4
+
+" Vimの内部文字コード
+set encoding=utf-8
+
+" Vimスクリプト内で日本語を使用
+scriptencoding utf-8
+
+" ファイルの書き込み時の文字コード
+set fileencoding=utf-8
+
+" ファイルの書き込み時の改行コード
+set fileformat=unix
+
+" ファイル読み込み時の文字コード
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+
+" 不可視文字を表示
+set list
+
+" 不可視文字に置き換える文字列を指定
+set listchars=tab:\ \ ,trail:\ ,eol:↲,extends:»,precedes:«
+
+" Vim上でyankしたテキストをクリップボードに格納
+set clipboard=unnamed,autoselect
+
+" Shebangの自動挿入
+augroup SetShebang
+	autocmd! SetShebang
+	autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\"|$
+augroup END
+
+" <Leader>をスペースキーに設定
+let mapleader = "\<Space>"
+let localleader = "\<Space>"
+
+
+"--------------------------------------------------------------------
+" プラグインの読み込み
+"--------------------------------------------------------------------
+
+" 外部ファイルの読み込み
+source ~/.vim/plug.vim
+
+
+"--------------------------------------------------------------------
+" キーバインド
+"--------------------------------------------------------------------
+
+" Leaderをスペースキーに設定
+let mapleader = "\<Space>"
+
+" ファイルを保存する
+nnoremap <Leader>w :w<CR>
+
+" ファイルを閉じる
+nnoremap <Leader>q :q<CR>
+
+" 置換
+nnoremap <Leader>s :%s/
+
+" sキーの割り当てを削除
+nnoremap s <Nop>
+
+" ウィンドウの水平分割
+nnoremap ss :split<CR>
+
+" ウィンドウの垂直分割
+nnoremap sv :vsplit<CR>
+
+" 左ウィンドウに移動
+nnoremap sh <C-w>h
+
+" 下ウィンドウに移動
+nnoremap sj <C-w>j
+
+" 上ウィンドウに移動
+nnoremap sk <C-w>k
+
+" 右ウィンドウに移動
+nnoremap sl <C-w>l
+
+" ウィンドウを左に移動
+nnoremap sH <C-w>H
+
+" ウィンドウを下に移動
+nnoremap sJ <C-w>J
+
+" ウィンドウを上に移動
+nnoremap sK <C-w>K
+
+" ウィンドウを右に移動
+nnoremap sL <C-w>L
+
+" 新規タブ
+nnoremap st :tabnew<CR>
+
+" 次のタブに切り替え
+nnoremap sn gt
+
+" 前のタブに切り替え
+nnoremap sp gT

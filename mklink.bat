@@ -8,9 +8,8 @@ if errorlevel 1 (
     exit
 )
 
-set /P DOTPATH="dotfilesディレクトリのフルパス: "
-
+rem シンボリックリンク作成
 cd %HOMEPATH%
-mklink /D .vim "%DOTPATH%\vimfiles"
-mklink _vimrc "%DOTPATH%\.vimrc"
+mklink /D .vim "%~dp0vimfiles"
+mklink _vimrc "%~dp0vimfilesﾂ･vimrc"
 mklink /D vimfiles .vim
