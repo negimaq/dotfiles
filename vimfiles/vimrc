@@ -48,13 +48,28 @@ set fileformat=unix
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 
 " 不可視文字を表示
-set list
+"set list
 
 " 不可視文字に置き換える文字列を指定
-set listchars=tab:\ \ ,trail:\ ,eol:↲,extends:»,precedes:«
+"set listchars=tab:\ \ ,trail:\ ,eol:↲,extends:»,precedes:«
+
+" 長い行を折り返して表示
+set wrap
+
+" 自動的にインデント
+set autoindent
+
+" バックスペースでインデントや改行を削除
+set backspace=indent,eol,start
+
+" 括弧入力時に対応する括弧を表示
+set showmatch
 
 " Vim上でyankしたテキストをクリップボードに格納
 set clipboard=unnamed,autoselect
+
+" 挿入モードでの自動折り返しを日本語に対応
+set formatoptions+=mM
 
 " Shebangの自動挿入
 augroup SetShebang
@@ -79,8 +94,8 @@ source ~/.vim/plug.vim
 " キーバインド
 "--------------------------------------------------------------------
 
-" Leaderをスペースキーに設定
-let mapleader = "\<Space>"
+" 挿入モードで素早くjjと入力した場合は<Esc>
+inoremap jj <Esc>
 
 " ファイルを保存する
 nnoremap <Leader>w :w<CR>

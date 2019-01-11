@@ -39,8 +39,8 @@ let NERDTreeShowHidden = 1
 
 "ディレクトリ表示記号を変更
 let g:NERDTreeDirArrows = 1
-let g:NERDTreeDirArrowExpandable  = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowExpandable  = "+"
+let g:NERDTreeDirArrowCollapsible = '~'
 
 "nerdtreeの表示・非表示の切り替え
 map <C-n> :NERDTreeToggle<CR>
