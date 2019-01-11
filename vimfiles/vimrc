@@ -19,13 +19,6 @@
 " 行番号を表示
 set number
 
-" しばらく操作をしなかった時にカーソル行を可視化
-"augroup vimrc-auto-cursorline
-	"autocmd!
-	"autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
-	"autocmd CursorHold,CursorHoldI * setlocal cursorline
-"augroup END
-
 " 検索時に全て英小文字で入力した場合のみ区別を無視
 set ignorecase
 set smartcase
@@ -51,12 +44,6 @@ set fileformat=unix
 " ファイル読み込み時の文字コード
 set fileencodings=euc-jp,sjis,utf-8
 
-" 不可視文字を表示
-"set list
-
-" 不可視文字に置き換える文字列を指定
-"set listchars=tab:\ \ ,trail:\ ,eol:↲,extends:»,precedes:«
-
 " 長い行を折り返して表示
 set wrap
 
@@ -79,6 +66,7 @@ set formatoptions+=mM
 augroup SetShebang
 	autocmd! SetShebang
 	autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\"|$
+	autocmd BufNewFile *.sh 0put =\"#!/bin/sh\"|$
 augroup END
 
 " <Leader>をスペースキーに設定
