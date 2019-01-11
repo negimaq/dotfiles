@@ -19,8 +19,12 @@
 " 行番号を表示
 set number
 
-" カーソル行の可視化
-set cursorline
+" しばらく操作をしなかった時にカーソル行を可視化
+augroup vimrc-auto-cursorline
+	autocmd!
+	autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
+	autocmd CursorHold,CursorHoldI * setlocal cursorline
+augroup END
 
 " 検索時に全て英小文字で入力した場合のみ区別を無視
 set ignorecase
@@ -45,7 +49,7 @@ set fileencoding=utf-8
 set fileformat=unix
 
 " ファイル読み込み時の文字コード
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=euc-jp,sjis,utf-8
 
 " 不可視文字を表示
 "set list
