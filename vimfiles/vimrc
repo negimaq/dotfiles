@@ -20,11 +20,11 @@
 set number
 
 " しばらく操作をしなかった時にカーソル行を可視化
-augroup vimrc-auto-cursorline
-	autocmd!
-	autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
-	autocmd CursorHold,CursorHoldI * setlocal cursorline
-augroup END
+"augroup vimrc-auto-cursorline
+	"autocmd!
+	"autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
+	"autocmd CursorHold,CursorHoldI * setlocal cursorline
+"augroup END
 
 " 検索時に全て英小文字で入力した場合のみ区別を無視
 set ignorecase
