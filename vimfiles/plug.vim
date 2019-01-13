@@ -66,7 +66,11 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 Plug 'airblade/vim-gitgutter'
 
-set signcolumn=yes
+if exists('&signcolumn')
+	set signcolumn=yes
+else
+	let g:gitgutter_sign_column_always = 1
+endif
 set updatetime=100
 
 Plug 'nathanaelkane/vim-indent-guides'
