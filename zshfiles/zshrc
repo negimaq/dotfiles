@@ -18,3 +18,42 @@
 
 # zshルートディレクトリの設定
 export ZSH_ROOT=$HOME/.zsh
+
+
+#====================================================================
+# プラグインの設定
+#====================================================================
+
+
+# zplugホームディレクトリの設定
+export ZPLUG_HOME=$HOME/.zsh/zplug
+
+# zplugの読み込み
+source $ZPLUG_HOME/init.zsh
+
+# テーマのインストール
+zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+
+# プラグインのインストール
+if ! zplug check --verbose; then
+	printf "Install plugins for zplug [y/N]: "
+	if read -q; then
+		echo; zplug install
+	fi
+fi
+
+# プラグインの読み込み
+zplug load --verbose
+
+
+#====================================================================
+# エイリアスの設定
+#====================================================================
+
+# lsコマンド
+alias ll='ls -l --color=auto'
+alias la='ls -la --color=auto'
+
+# vimコマンド
+alias v='vim'
+alias vi='vim'

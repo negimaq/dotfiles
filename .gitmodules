@@ -1,3 +1,6 @@
 [submodule "vimfiles/autoload"]
 	path = vimfiles/autoload
 	url = https://github.com/junegunn/vim-plug.git
+[submodule "zshfiles/zplug"]
+	path = zshfiles/zplug
+	url = https://github.com/zplug/zplug.git
