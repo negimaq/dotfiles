@@ -19,11 +19,12 @@
 # zshルートディレクトリの設定
 export ZSH_ROOT=$HOME/.zsh
 
+export TERM=xterm-256color
+
 
 #====================================================================
 # プラグインの設定
 #====================================================================
-
 
 # zplugホームディレクトリの設定
 export ZPLUG_HOME=$HOME/.zsh/zplug
@@ -31,8 +32,12 @@ export ZPLUG_HOME=$HOME/.zsh/zplug
 # zplugの読み込み
 source $ZPLUG_HOME/init.zsh
 
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
+
 # テーマのインストール
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug "themes/agnoster", from:oh-my-zsh
 
 # プラグインのインストール
 if ! zplug check --verbose; then
