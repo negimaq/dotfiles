@@ -92,6 +92,8 @@ let g:airline_theme = 'jellybeans'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
+Plug 'davidhalter/jedi-vim'
+
 " 読み込むプラグインの定義終了
 call plug#end()
 
