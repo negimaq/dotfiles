@@ -37,8 +37,8 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
 
 # テーマのインストール
-#zplug "themes/agnoster", from:oh-my-zsh
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug "themes/agnoster", from:oh-my-zsh
+#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 # プラグインのインストール
 if ! zplug check --verbose; then
