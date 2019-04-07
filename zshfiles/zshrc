@@ -16,9 +16,7 @@
 # 基本設定
 #====================================================================
 
-# zshルートディレクトリの設定
-export ZSH_ROOT=$HOME/.zsh
-
+# ターミナル256色対応
 export TERM=xterm-256color
 
 
@@ -38,7 +36,6 @@ zplug "zsh-users/zsh-history-substring-search"
 
 # テーマのインストール
 zplug "themes/agnoster", from:oh-my-zsh
-#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 # プラグインのインストール
 if ! zplug check --verbose; then

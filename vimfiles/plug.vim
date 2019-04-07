@@ -20,8 +20,14 @@
 " 読み込むプラグインの定義開始
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/neomru.vim'
+"Plug 'Shougo/unite.vim'
+"Plug 'Shougo/neomru.vim'
+Plug 'Shougo/neocomplete.vim'
+
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 Plug 'scrooloose/nerdtree'
 
@@ -93,6 +99,21 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 Plug 'davidhalter/jedi-vim'
+
+" 上部のdocstringを無効化
+autocmd FileType python setlocal completeopt-=preview
+
+Plug 'lambdalisue/vim-pyenv', {
+			\ 'depends': ['davidhalter/jedi-vim'],
+			\ 'autoload': {
+			\   'filetypes': ['python', 'python3'],
+			\ }}
+
+Plug 'ervandew/supertab'
+
+" 補完の順番を修正
+let g:SuperTabContextDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " 読み込むプラグインの定義終了
 call plug#end()
