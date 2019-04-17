@@ -60,3 +60,13 @@ alias la='ls -la'
 # vimコマンド
 alias v='vim'
 alias vi='vim'
+
+# gitコマンド
+alias g='git'
+
+# pythonコマンド
+alias p='python'
+
+# グローバルエイリアス
+alias -g G='| grep'
+alias -g X='| xargs'
