@@ -29,8 +29,8 @@ export LANG=ja_JP.UTF-8
 export EDITOR=vim
 
 # PCごとの設定を読み込み
-if [ -e "ignored_zshenv" ]; then
-	source ignored_zshenv
+if [ -e "$ZSH_ROOT/ignored_zshenv" ]; then
+	source $ZSH_ROOT/ignored_zshenv
 fi
 
 # pyenvの設定

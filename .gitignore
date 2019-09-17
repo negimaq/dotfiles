@@ -1,2 +1,4 @@
 # プラグインディレクトリを無視する
 /vimfiles/plugged/
+
+/zshfiles/ignored_zshenv
