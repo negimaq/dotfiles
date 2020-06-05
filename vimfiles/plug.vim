@@ -115,6 +115,40 @@ Plug 'ervandew/supertab'
 let g:SuperTabContextDefaultCompletionType = "context"
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
+Plug 'mattn/sonictemplate-vim'
+
+let g:sonictemplate_vim_template_dir = ['~/.vim/template']
+
+Plug 'vim-jp/cpp-vim', {
+			\ 'autoload': {
+			\   'filetypes': 'cpp'
+			\ }}
+
+augroup cpp-path
+	autocmd!
+	autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include
+augroup END
+
+Plug 'thinca/vim-quickrun', {'on': 'QuickRun'}
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
+
+let g:quickrun_config = {}
+
+let g:quickrun_config._ = {
+			\ 'outputter/error/success': 'buffer',
+			\ 'outputter/error/error': 'quickfix',
+			\ 'outputter/quickfix/open_cmd': 'copen',
+			\ 'runner': 'vimproc',
+			\ 'runner/vimproc/updatetime': 60,
+			\ 'hook/time/enable': 1,
+			\ }
+
+let g:quickrun_config.cpp = {
+			\ 'command': 'g++',
+			\ 'input': 'input',
+			\ 'runner': 'system',
+			\ }
+
 " 読み込むプラグインの定義終了
 call plug#end()
 

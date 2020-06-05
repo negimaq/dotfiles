@@ -42,7 +42,7 @@ set fileencoding=utf-8
 set fileformat=unix
 
 " ファイル読み込み時の文字コード
-set fileencodings=euc-jp,sjis,utf-8
+set fileencodings=utf-8,euc-jp,sjis
 
 " 長い行を折り返して表示
 set wrap
@@ -97,6 +97,12 @@ nnoremap <Leader>q :q<CR>
 
 " 置換
 nnoremap <Leader>s :%s/
+
+" QuickRun
+nnoremap <Leader>r :QuickRun<CR>
+
+" 開いているファイルの全行をクリップボードにコピー
+nnoremap <Leader>y :%y+<CR>
 
 " sキーの割り当てを削除
 nnoremap s <Nop>
