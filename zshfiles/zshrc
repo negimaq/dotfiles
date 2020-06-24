@@ -21,6 +21,18 @@ export TERM=xterm-256color
 
 
 #====================================================================
+# Powerlevel10kのinstant promptの設定
+#====================================================================
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
+#====================================================================
 # プラグインの設定
 #====================================================================
 
@@ -35,7 +47,7 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
 
 # テーマのインストール
-zplug "themes/agnoster", from:oh-my-zsh
+zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 # プラグインのインストール
 if ! zplug check --verbose; then
@@ -54,8 +66,13 @@ zplug load --verbose
 #====================================================================
 
 # lsコマンド
-alias ll='ls -l'
-alias la='ls -la'
+case $(uname) in
+	Linux) alias ls='ls --color';;
+	Darwin) alias ls='ls -G';;
+	FreeBSD) alias ls='ls -G';;
+esac
+alias ll='ls -lh'
+alias la='ls -lah'
 
 # vimコマンド
 alias v='vim'
@@ -70,3 +87,11 @@ alias p='python'
 # グローバルエイリアス
 alias -g G='| grep'
 alias -g X='| xargs'
+
+
+#====================================================================
+# Powerlevel10kの設定
+#====================================================================
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
