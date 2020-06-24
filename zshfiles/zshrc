@@ -45,6 +45,7 @@ source $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-autosuggestions"
 
 # テーマのインストール
 zplug "romkatv/powerlevel10k", as:theme, depth:1
@@ -58,7 +59,7 @@ if ! zplug check --verbose; then
 fi
 
 # プラグインの読み込み
-zplug load --verbose
+zplug load
 
 
 #====================================================================
