@@ -67,11 +67,15 @@ zplug load
 #====================================================================
 
 # lsコマンド
-case $(uname) in
-	Linux) alias ls='ls --color';;
-	Darwin) alias ls='ls -G';;
-	FreeBSD) alias ls='ls -G';;
-esac
+if type "lsd" > /dev/null 2>&1; then
+	alias ls='lsd'
+else
+	case $(uname) in
+		Linux) alias ls='ls --color';;
+		Darwin) alias ls='ls -G';;
+		FreeBSD) alias ls='ls -G';;
+	esac
+fi
 alias ll='ls -lh'
 alias la='ls -lah'
 
