@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # 設定用パスの取得
 DOT_DIR=$(cd $(dirname $0); cd ..; pwd)

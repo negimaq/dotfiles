@@ -66,7 +66,7 @@ set formatoptions+=mM
 augroup SetShebang
 	autocmd! SetShebang
 	autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\"|$
-	autocmd BufNewFile *.sh 0put =\"#!/bin/sh\"|$
+	autocmd BufNewFile *.sh 0put =\"#!/bin/bash\"|$
 augroup END
 
 " <Leader>をスペースキーに設定

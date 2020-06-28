@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 # 設定用パスの取得
 DOT_DIR=$(cd $(dirname $0); cd ..; pwd)
 
 # シンボリックリンク作成
-if [[ -e ~/.zsh ]]; then
+if [ -e ~/.zsh ]; then
 	unlink ~/.zsh
 fi
 ln -sf $DOT_DIR/zshfiles ~/.zsh
@@ -14,3 +14,8 @@ ln -sf $DOT_DIR/zshfiles/zshenv ~/.zshenv
 # pyenvとpyenv-virtualenvのインストール
 git clone git://github.com/yyuu/pyenv.git ~/.pyenv
 git clone git://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+
+# tmux1.9以上がインストールされている場合にTPMをインストール
+if type "tmux" > /dev/null 2>&1 && [[ ! "$(tmux -V | cut -c 6-)" < "1.9" ]] ; then
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
