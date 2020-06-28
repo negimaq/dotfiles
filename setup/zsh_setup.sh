@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# ÀßÄêÍÑ¥Ñ¥¹¤Î¼èÆÀ
+# è¨­å®šç”¨ãƒ‘ã‚¹ã®å–å¾—
 DOT_DIR=$(cd $(dirname $0); cd ..; pwd)
 
-# ¥·¥ó¥Ü¥ê¥Ã¥¯¥ê¥ó¥¯ºîÀ®
+# ã‚·ãƒ³ãƒœãƒªãƒƒã‚¯ãƒªãƒ³ã‚¯ä½œæˆ
 if [[ -e ~/.zsh ]]; then
 	unlink ~/.zsh
 fi
@@ -11,6 +11,6 @@ ln -sf $DOT_DIR/zshfiles ~/.zsh
 ln -sf $DOT_DIR/zshfiles/zshrc ~/.zshrc
 ln -sf $DOT_DIR/zshfiles/zshenv ~/.zshenv
 
-# pyenv¤Èpyenv-virtualenv¤Î¥¤¥ó¥¹¥È¡¼¥ë
+# pyenvã¨pyenv-virtualenvã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 git clone git://github.com/yyuu/pyenv.git ~/.pyenv
 git clone git://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
