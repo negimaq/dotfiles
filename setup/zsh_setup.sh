@@ -18,4 +18,5 @@ git clone git://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-vir
 # tmux1.9以上がインストールされている場合にTPMをインストール
 if type "tmux" > /dev/null 2>&1 && [[ ! "$(tmux -V | cut -c 6-)" < "1.9" ]] ; then
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	ln -sf $DOT_DIR/tmux.conf ~/.tmux.conf
 fi
