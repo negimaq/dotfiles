@@ -134,19 +134,22 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
 let g:quickrun_config = {}
 
-let g:quickrun_config._ = {
+let g:quickrun_config.cpp = {
 			\ 'outputter/error/success': 'buffer',
 			\ 'outputter/error/error': 'quickfix',
 			\ 'outputter/quickfix/open_cmd': 'copen',
-			\ 'runner': 'vimproc',
 			\ 'runner/vimproc/updatetime': 60,
 			\ 'hook/time/enable': 1,
-			\ }
-
-let g:quickrun_config.cpp = {
 			\ 'command': 'g++',
 			\ 'input': 'input',
 			\ 'runner': 'system',
+			\ }
+
+let g:quickrun_config.tex = {
+			\ 'outputter': 'error',
+			\ 'outputter/error/success': 'null',
+			\ 'outputter/error/error': 'quickfix',
+			\ 'exec': ['make cleanall', 'make']
 			\ }
 
 " 読み込むプラグインの定義終了
