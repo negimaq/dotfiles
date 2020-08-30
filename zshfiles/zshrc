@@ -89,6 +89,9 @@ alias g='git'
 # pythonコマンド
 alias p='python'
 
+# pdfpcコマンド
+alias pp='pdfpc -Z 1920:1080 -w'
+
 # グローバルエイリアス
 alias -g G='| grep'
 alias -g X='| xargs'
