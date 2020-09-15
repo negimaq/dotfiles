@@ -53,7 +53,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
 	\ "Modified"  : "@",
 	\ "Staged"    : "+",
 	\ "Untracked" : "/",
