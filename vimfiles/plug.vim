@@ -152,6 +152,8 @@ let g:quickrun_config.tex = {
 			\ 'exec': ['make cleanall', 'make']
 			\ }
 
+Plug 'fatih/vim-go'
+
 " 読み込むプラグインの定義終了
 call plug#end()
 

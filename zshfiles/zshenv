@@ -29,7 +29,8 @@ fi
 
 # Golangをパスを追加
 if [ -e "$HOME/.local/go/bin" ]; then
-	export PATH=$PATH:$HOME/.local/go/bin
+	export GOPATH=$HOME/.local/go
+	export PATH=$PATH:$GOPATH/bin
 fi
 
 # 日本語を使用
