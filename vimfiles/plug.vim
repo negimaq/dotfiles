@@ -154,6 +154,10 @@ let g:quickrun_config.tex = {
 
 Plug 'fatih/vim-go'
 
+let g:go_template_autocreate = 0
+
+Plug 'rust-lang/rust.vim'
+
 " 読み込むプラグインの定義終了
 call plug#end()
 
