@@ -80,6 +80,9 @@ alias ll='ls -lh'
 alias la='ls -lah'
 
 # vimコマンド
+if [ -e "$HOME/.local/vim/bin" ]; then
+	alias vim="$HOME/.local/vim/bin/vim"
+fi
 alias v='vim'
 alias vi='vim'
 
