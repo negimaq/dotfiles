@@ -12,8 +12,8 @@ ln -sf $DOT_DIR/zshfiles/zshrc ~/.zshrc
 ln -sf $DOT_DIR/zshfiles/zshenv ~/.zshenv
 
 # pyenvとpyenv-virtualenvのインストール
-git clone git://github.com/yyuu/pyenv.git ~/.pyenv
-git clone git://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
 # tmux1.9以上がインストールされている場合にTPMをインストール
 if type "tmux" > /dev/null 2>&1 && [[ ! "$(tmux -V | tr -cd 0123456789.)" < "1.9" ]] ; then
