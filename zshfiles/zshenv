@@ -42,13 +42,16 @@ fi
 
 # Golangのパスを追加
 export GOPATH=$HOME/.local/go
+export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
+export GO111MODULE=on
 
 # goenvの設定
 export GOENV_ROOT="$HOME/.goenv"
+export GOENV_GOPATH_PREFIX="$HOME/.local/go"
 export PATH="$GOENV_ROOT/bin:$PATH"
 if command -v goenv 1>/dev/null 2>&1; then
-	eval "$(goenv init -)"
+        eval "$(goenv init -)"
 fi
 
 # Rustのパスを追加
