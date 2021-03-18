@@ -75,6 +75,7 @@ else
 fi
 alias ll='ls -lh'
 alias la='ls -lah'
+alias lt='ls --tree'
 
 # vimコマンド
 if [ -e "$HOME/.local/vim/bin" ]; then
