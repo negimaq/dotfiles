@@ -87,7 +87,21 @@ alias v='vim'
 alias vi='vim'
 
 # gitコマンド
+# 重複注意: go, gs
 alias g='git'
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit -m'
+alias gd='git diff'
+alias gf='git fetch'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias gt='git tag'
+alias gba='git branch -a'
+alias gch='git checkout'
+alias gcl='git clone --recursive'
+alias gpl='git pull'
+alias gps='git push'
+alias gst='git status -sb'
 
 # pythonコマンド
 alias p='python'
