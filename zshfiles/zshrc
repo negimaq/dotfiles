@@ -102,6 +102,9 @@ alias gcl='git clone --recursive'
 alias gpl='git pull'
 alias gps='git push'
 alias gst='git status -sb'
+if type "delta" > /dev/null 2>&1; then
+	export GIT_PAGER="delta --theme='Monokai Extended'"
+fi
 
 # pythonコマンド
 alias p='python'
