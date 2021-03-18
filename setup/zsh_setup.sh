@@ -23,6 +23,9 @@ fi
 # goenvのインストール
 git clone https://github.com/syndbg/goenv.git ~/.goenv
 
+# rustupのインストール
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
 # tmux1.9以上がインストールされている場合にTPMをインストール
 if type "tmux" > /dev/null 2>&1 && [[ ! "$(tmux -V | tr -cd 0123456789.)" < "1.9" ]] ; then
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
