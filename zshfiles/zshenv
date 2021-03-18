@@ -26,15 +26,15 @@ export LANG=ja_JP.UTF-8
 export EDITOR=vim
 
 # ローカルのインストールパスを追加
-export PATH=$PATH:$HOME/.local/bin
+export PATH=$HOME/.local/bin:$PATH
 
 # Docker Rootlessの環境変数を追加
 export PATH=$PATH:$HOME/.local/docker/bin:/sbin
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 # pyenvの設定
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
 if command -v pyenv 1>/dev/null 2>&1; then
 	eval "$(pyenv init -)"
 	eval "$(pyenv virtualenv-init -)"
@@ -43,15 +43,15 @@ fi
 # Golangのパスを追加
 export GOPATH=$HOME/.local/go
 export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOPATH/bin
+export PATH=$GOPATH/bin:$PATH
 export GO111MODULE=on
 
 # goenvの設定
-export GOENV_ROOT="$HOME/.goenv"
-export GOENV_GOPATH_PREFIX="$HOME/.local/go"
-export PATH="$GOENV_ROOT/bin:$PATH"
+export GOENV_ROOT=$HOME/.goenv
+export GOENV_GOPATH_PREFIX=$HOME/.local/go
+export PATH=$GOENV_ROOT/bin:$PATH
 if command -v goenv 1>/dev/null 2>&1; then
-        eval "$(goenv init -)"
+	eval "$(goenv init -)"
 fi
 
 # Rustのパスを追加
