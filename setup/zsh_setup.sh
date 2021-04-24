@@ -11,17 +11,15 @@ ln -sf $DOT_DIR/zshfiles ~/.zsh
 ln -sf $DOT_DIR/zshfiles/zshrc ~/.zshrc
 ln -sf $DOT_DIR/zshfiles/zshenv ~/.zshenv
 
-# pyenvとpyenv-virtualenvのインストール
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+# anyenvのインストール
+git clone https://github.com/anyenv/anyenv ~/.anyenv
+~/.anyenv/bin/anyenv install --init
 
-# Golangのインストール先を作成
-if [ ! -e "$HOME/.local/go/bin" ]; then
-	mkdir -p $HOME/.local/go/bin
-fi
-
-# goenvのインストール
-git clone https://github.com/syndbg/goenv.git ~/.goenv
+# anyenvのプラグインをインストール
+ANYENV_ROOT=$(~/.anyenv/bin/anyenv root)
+mkdir -p $ANYENV_ROOT/plugins
+git clone https://github.com/znz/anyenv-update.git $ANYENV_ROOT/plugins/anyenv-update
+git clone https://github.com/znz/anyenv-git.git $ANYENV_ROOT/plugins/anyenv-git
 
 # rustupのインストール
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
