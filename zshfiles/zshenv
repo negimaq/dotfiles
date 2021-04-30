@@ -34,6 +34,9 @@ if command -v anyenv 1>/dev/null 2>&1; then
 	eval "$(anyenv init -)"
 fi
 
+# poetryのパスを追加
+export PATH="$HOME/.poetry/bin:$PATH"
+
 # Golangのパスを追加
 export GO111MODULE=on
 export GOPATH=$HOME/.local/go
