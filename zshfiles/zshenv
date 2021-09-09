@@ -52,4 +52,3 @@ fi
 if [ -S $XDG_RUNTIME_DIR/docker.sock ]; then
 	export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 fi
-source "$HOME/.cargo/env"
