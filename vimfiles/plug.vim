@@ -8,7 +8,7 @@
 "                                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                                   "
-"        Written by minekaede (https://github.com/minekaede)        "
+"          Written by negimaq (https://github.com/negimaq)          "
 "                                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
