@@ -10,6 +10,7 @@ fi
 ln -sf $DOT_DIR/zshfiles ~/.zsh
 ln -sf $DOT_DIR/zshfiles/zshrc ~/.zshrc
 ln -sf $DOT_DIR/zshfiles/zshenv ~/.zshenv
+ln -sf $DOT_DIR/tmux.conf ~/.tmux.conf
 
 # anyenvのインストール
 git clone https://github.com/anyenv/anyenv ~/.anyenv
