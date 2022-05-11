@@ -56,8 +56,7 @@ if ! zplug check --verbose; then
 fi
 
 # プラグインの読み込み
-zplug load
-
+zplug load 
 
 #====================================================================
 # エイリアスの設定
@@ -100,11 +99,14 @@ alias gpl='git pull'
 alias gps='git push'
 alias gst='git status -sb'
 if type "delta" > /dev/null 2>&1; then
-	export GIT_PAGER="delta --theme='Monokai Extended'"
+	export GIT_PAGER="delta"
 fi
 
 # pythonコマンド
 alias p='python'
+
+# atcoder-toolsコマンド
+alias ac='poetry run atcoder-tools'
 
 # pdfpcコマンド
 alias pp='pdfpc -Z 1920:1080'
