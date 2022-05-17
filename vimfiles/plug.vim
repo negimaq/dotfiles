@@ -22,7 +22,7 @@ call plug#begin('~/.vim/plugged')
 
 "Plug 'Shougo/unite.vim'
 "Plug 'Shougo/neomru.vim'
-Plug 'Shougo/neocomplete.vim'
+"Plug 'Shougo/neocomplete.vim'
 
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
@@ -98,16 +98,16 @@ let g:airline_theme = 'jellybeans'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
 
 " 上部のdocstringを無効化
-autocmd FileType python setlocal completeopt-=preview
+"autocmd FileType python setlocal completeopt-=preview
 
-Plug 'lambdalisue/vim-pyenv', {
-			\ 'depends': ['davidhalter/jedi-vim'],
-			\ 'autoload': {
-			\   'filetypes': ['python', 'python3'],
-			\ }}
+"Plug 'lambdalisue/vim-pyenv', {
+			"\ 'depends': ['davidhalter/jedi-vim'],
+			"\ 'autoload': {
+			"\   'filetypes': ['python', 'python3'],
+			"\ }}
 
 Plug 'ervandew/supertab'
 
@@ -152,11 +152,20 @@ let g:quickrun_config.tex = {
 			\ 'exec': ['make cleanall', 'make']
 			\ }
 
-Plug 'fatih/vim-go'
+"Plug 'fatih/vim-go'
 
-let g:go_template_autocreate = 0
+"let g:go_template_autocreate = 0
 
-Plug 'rust-lang/rust.vim'
+"Plug 'rust-lang/rust.vim'
+
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 
 " 読み込むプラグインの定義終了
 call plug#end()
