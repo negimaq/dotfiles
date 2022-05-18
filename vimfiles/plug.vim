@@ -109,11 +109,11 @@ let g:airline#extensions#tabline#enabled = 1
 			"\   'filetypes': ['python', 'python3'],
 			"\ }}
 
-Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'
 
 " 補完の順番を修正
-let g:SuperTabContextDefaultCompletionType = "context"
-let g:SuperTabDefaultCompletionType = "<c-n>"
+"let g:SuperTabContextDefaultCompletionType = "context"
+"let g:SuperTabDefaultCompletionType = "<c-n>"
 
 Plug 'mattn/sonictemplate-vim'
 
@@ -160,21 +160,6 @@ let g:quickrun_config.tex = {
 
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
-Plug 'mattn/vim-lsp-icons'
-
-function! s:on_lsp_buffer_enabled() abort
-  setlocal omnifunc=lsp#complete
-  setlocal signcolumn=yes
-  nmap <buffer> gd <plug>(lsp-definition)
-  nmap <buffer> <f2> <plug>(lsp-rename)
-  inoremap <expr> <cr> pumvisible() ? "\<c-y>\<cr>" : "\<cr>"
-endfunction
-
-augroup lsp_install
-  au!
-  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
-command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/lsp.log')
 
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
@@ -183,9 +168,24 @@ let g:lsp_text_edit_enabled = 1
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
-let g:asyncomplete_auto_popup = 1
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : InputCR()
+
+let g:asyncomplete_auto_popup = 0
+
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+	\ pumvisible() ? "\<C-n>" :
+	\ <SID>check_back_space() ? "\<TAB>" :
+	\ asyncomplete#force_refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
 let g:asyncomplete_auto_completeopt = 0
-let g:asyncomplete_popup_delay = 500
 
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
