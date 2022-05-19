@@ -20,15 +20,6 @@
 " 読み込むプラグインの定義開始
 call plug#begin('~/.vim/plugged')
 
-"Plug 'Shougo/unite.vim'
-"Plug 'Shougo/neomru.vim'
-"Plug 'Shougo/neocomplete.vim'
-
-"let g:acp_enableAtStartup = 0
-"let g:neocomplete#enable_at_startup = 1
-"let g:neocomplete#enable_smart_case = 1
-"let g:neocomplete#sources#syntax#min_keyword_length = 3
-
 Plug 'scrooloose/nerdtree'
 
 "Vim起動時にnerdtreeを自動的に表示・ファイルにフォーカス
@@ -98,36 +89,9 @@ let g:airline_theme = 'jellybeans'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-"Plug 'davidhalter/jedi-vim'
-
-" 上部のdocstringを無効化
-"autocmd FileType python setlocal completeopt-=preview
-
-"Plug 'lambdalisue/vim-pyenv', {
-			"\ 'depends': ['davidhalter/jedi-vim'],
-			"\ 'autoload': {
-			"\   'filetypes': ['python', 'python3'],
-			"\ }}
-
-"Plug 'ervandew/supertab'
-
-" 補完の順番を修正
-"let g:SuperTabContextDefaultCompletionType = "context"
-"let g:SuperTabDefaultCompletionType = "<c-n>"
-
 Plug 'mattn/sonictemplate-vim'
 
 let g:sonictemplate_vim_template_dir = ['~/.vim/template']
-
-Plug 'vim-jp/cpp-vim', {
-			\ 'autoload': {
-			\   'filetypes': 'cpp'
-			\ }}
-
-augroup cpp-path
-	autocmd!
-	autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include
-augroup END
 
 Plug 'thinca/vim-quickrun', {'on': 'QuickRun'}
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
@@ -152,18 +116,13 @@ let g:quickrun_config.tex = {
 			\ 'exec': ['make cleanall', 'make']
 			\ }
 
-"Plug 'fatih/vim-go'
-
-"let g:go_template_autocreate = 0
-
-"Plug 'rust-lang/rust.vim'
-
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 
-let g:lsp_diagnostics_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_text_edit_enabled = 1
+nmap <buffer> <Leader>k <plug>(lsp-hover)
+nmap <buffer> <Leader>d <plug>(lsp-peek-definition)
+
+autocmd BufWritePre <buffer> LspDocumentFormatSync
 
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
@@ -171,8 +130,6 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : InputCR()
-
-let g:asyncomplete_auto_popup = 0
 
 function! s:check_back_space() abort
 	let col = col('.') - 1
@@ -186,6 +143,7 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 let g:asyncomplete_auto_completeopt = 0
+set completeopt=menuone,noinsert,noselect,preview
 
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
