@@ -119,6 +119,8 @@ let g:quickrun_config.tex = {
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 
+let g:lsp_diagnostics_echo_cursor = 1
+
 nmap <buffer> <Leader>k <plug>(lsp-hover)
 nmap <buffer> <Leader>d <plug>(lsp-peek-definition)
 

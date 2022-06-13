@@ -62,6 +62,9 @@ set clipboard=unnamed,autoselect
 " 挿入モードでの自動折り返しを日本語に対応
 set formatoptions+=mM
 
+" カーソルのある行をハイライト
+set cursorline
+
 " ファイルタイプごとにインデントを設定
 if has("autocmd")
 	filetype plugin on
