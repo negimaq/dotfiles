@@ -75,6 +75,7 @@ if has("autocmd")
 	autocmd FileType javascriptreact setlocal sw=2 ts=2
 	autocmd FileType typescript setlocal sw=2 ts=2
 	autocmd FileType typescriptreact setlocal sw=2 ts=2
+	autocmd FileType terraform setlocal sw=2 ts=2
 endif
 
 " Shebangの自動挿入
