@@ -40,7 +40,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # poetryのパスを追加
-export PATH="$HOME/.poetry/bin:$PATH"
+if [ -d "$HOME/.poetry/bin" ]; then
+	export PATH="$HOME/.poetry/bin:$PATH"
+fi
 
 # Golangのパスを追加
 export GO111MODULE=on
@@ -49,11 +51,16 @@ export GOBIN=$GOPATH/bin
 export PATH=$GOPATH/bin:$PATH
 
 # Rustのパスを追加
-if [ -e "$HOME/.cargo/env" ]; then
+if [ -f "$HOME/.cargo/env" ]; then
 	source $HOME/.cargo/env
 fi
 
 # Docker Rootlessの環境変数を追加
 if [ -S $XDG_RUNTIME_DIR/docker.sock ]; then
 	export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+fi
+
+# 各マシンごとの設定を読み込み
+if [ -f "$HOME/.zshenv-local" ]; then
+	source $HOME/.zshenv-local
 fi
