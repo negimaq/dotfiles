@@ -44,6 +44,11 @@ if [ -d "$HOME/.poetry/bin" ]; then
 	export PATH="$HOME/.poetry/bin:$PATH"
 fi
 
+# rbenvの初期化
+if command -v rbenv 1>/dev/null 2>&1; then
+	eval "$(rbenv init - zsh)"
+fi
+
 # Golangのパスを追加
 export GO111MODULE=on
 export GOROOT=$HOME/.goroot
