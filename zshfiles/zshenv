@@ -46,9 +46,10 @@ fi
 
 # Golangのパスを追加
 export GO111MODULE=on
-export GOPATH=$HOME/.local/go
+export GOROOT=$HOME/.goroot
+export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export PATH=$GOPATH/bin:$PATH
+export PATH=$GOROOT/bin:$GOBIN:$PATH
 
 # Rustのパスを追加
 if [ -f "$HOME/.cargo/env" ]; then
