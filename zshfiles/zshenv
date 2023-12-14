@@ -49,6 +49,11 @@ if command -v rbenv 1>/dev/null 2>&1; then
 	eval "$(rbenv init - zsh)"
 fi
 
+# Krewのパスを追加
+if [ -d "$HOME/.krew/bin" ]; then
+	export PATH="$HOME/.krew/bin:$PATH"
+fi
+
 # Golangのパスを追加
 export GO111MODULE=on
 export GOROOT=$HOME/.goroot
