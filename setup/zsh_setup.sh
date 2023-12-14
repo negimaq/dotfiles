@@ -22,6 +22,10 @@ mkdir -p $ANYENV_ROOT/plugins
 git clone https://github.com/znz/anyenv-update.git $ANYENV_ROOT/plugins/anyenv-update
 git clone https://github.com/znz/anyenv-git.git $ANYENV_ROOT/plugins/anyenv-git
 
+# asdfのインストール
+ASDF_ROOT=$(~/.asdf)
+git clone https://github.com/asdf-vm/asdf.git $ASDF_ROOT
+
 # rustupのインストール
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
