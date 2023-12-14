@@ -106,6 +106,10 @@ fi
 # pythonコマンド
 alias p='python'
 
+# k8sコマンド
+alias kc='kubectl'
+alias ic='istioctl'
+
 # atcoder-toolsコマンド
 alias ac='poetry run atcoder-tools'
 
