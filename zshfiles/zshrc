@@ -109,13 +109,13 @@ alias p='python'
 # k8sコマンド
 alias kc='kubectl'
 alias kcc='kubectl ctx'
+alias kci='kubectl iexec'
 alias kcn='kubectl ns'
 alias kcs='kubectl status'
+alias kcrc='kubectl resource-capacity'
 alias kcgp='kubectl get pod'
 alias ic='istioctl'
-
-# atcoder-toolsコマンド
-alias ac='poetry run atcoder-tools'
+alias ac='argocd'
 
 # pdfpcコマンド
 alias pp='pdfpc -Z 1920:1080'
