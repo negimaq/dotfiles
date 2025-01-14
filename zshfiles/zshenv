@@ -60,11 +60,8 @@ if [ -d "$HOME/.krew/bin" ]; then
 fi
 
 # Golangのパスを追加
-export GO111MODULE=on
-export GOROOT=$HOME/.goroot
 export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$GOROOT/bin:$GOBIN:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 # Rustのパスを追加
 if [ -f "$HOME/.cargo/env" ]; then
