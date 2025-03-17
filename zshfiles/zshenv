@@ -61,7 +61,8 @@ fi
 
 # Golangのパスを追加
 export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$PATH
+export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH
 
 # Rustのパスを追加
 if [ -f "$HOME/.cargo/env" ]; then
