@@ -108,7 +108,7 @@ alias p='python'
 
 # k8sコマンド
 alias kc='kubectl'
-alias kcc='kubectl ctx $(kubectl ctx | peco)'
+alias kcc='kubectl ctx'
 alias kcn='kubectl ns'
 alias kcs='kubectl status'
 alias kcrc='kubectl resource-capacity'
