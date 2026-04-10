@@ -11,6 +11,7 @@ ln -sf $DOT_DIR/zshfiles ~/.zsh
 ln -sf $DOT_DIR/zshfiles/zshrc ~/.zshrc
 ln -sf $DOT_DIR/zshfiles/zshenv ~/.zshenv
 ln -sf $DOT_DIR/tmux.conf ~/.tmux.conf
+ln -sf $DOT_DIR/Brewfile ~/Brewfile
 
 if [ ! -d ~/.anyenv ]; then
 	# anyenvのインストール
